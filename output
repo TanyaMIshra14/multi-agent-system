@@ -1,0 +1,34 @@
+Processing JSON Invoice
+2025-06-01 22:18:17,938 - Orchestrator - INFO - Starting classification
+2025-06-01 22:18:17,943 - Agent.Classifier - INFO - Action: CLASSIFY - {'format': 'JSON', 'intent': 'INVOICE', 'data_preview': "{'invoice_number': 'INV-2024-001', 'vendor': 'ACME Corp', 'amount': 1250.0, 'date': '2024-03-15', 'd..."}
+2025-06-01 22:18:17,949 - Orchestrator - INFO - Routing to agent for JSON + INVOICE
+2025-06-01 22:18:17,954 - Agent.JSON - INFO - Action: PROCESS_JSON - {'is_valid': True, 'anomalies': [], 'extracted_fields_count': 6, 'extracted_fields': ['amount', 'vendor', 'date', 'invoice_number', 'description', '_metadata']}
+2025-06-01 22:18:17,959 - Orchestrator - INFO - Processing complete for context 8b10fe01-beae-41c7-9204-4a7561deab88
+Result: success
+Context ID: 8b10fe01-beae-41c7-9204-4a7561deab88
+Extracted Fields: 6 fields
+
+Processing Email RFQ
+2025-06-01 22:18:17,960 - Orchestrator - INFO - Starting classification
+2025-06-01 22:18:17,964 - Agent.Classifier - INFO - Action: CLASSIFY - {'format': 'EMAIL', 'intent': 'RFQ', 'data_preview': 'From: john.doe@company.com\nTo: sales@supplier.com\nSubject: RFQ - Office Furniture - URGENT\nDate: Mon...'}
+2025-06-01 22:18:17,968 - Orchestrator - INFO - Routing to agent for EMAIL + RFQ
+2025-06-01 22:18:17,973 - Agent.Email - INFO - Action: PROCESS_EMAIL - {'sender': 'john.doe@company.com', 'urgency': 'HIGH', 'intent': 'RFQ', 'key_info_fields': ['requested_quantity', 'deadline']}
+2025-06-01 22:18:17,979 - Orchestrator - INFO - Processing complete for context fd960bfe-b340-4ac2-a5dd-c8f487dc86cb
+Result: success
+Urgency: HIGH
+Sender: john.doe@company.com
+Intent: Intent.RFQ
+
+Processing PDF Invoice Text
+2025-06-01 22:18:17,980 - Orchestrator - INFO - Starting classification
+2025-06-01 22:18:17,984 - Agent.Classifier - INFO - Action: CLASSIFY - {'format': 'EMAIL', 'intent': 'INVOICE', 'data_preview': 'INVOICE\n\nACME Corporation\n123 Business St, City, State 12345\n\nInvoice #: INV-2024-0025\nDate: March 1...'}
+2025-06-01 22:18:17,990 - Orchestrator - INFO - Routing to agent for EMAIL + INVOICE
+2025-06-01 22:18:18,000 - Agent.Email - INFO - Action: PROCESS_EMAIL - {'sender': 'Unknown', 'urgency': 'LOW', 'intent': 'INVOICE', 'key_info_fields': []}
+2025-06-01 22:18:18,010 - Orchestrator - INFO - Processing complete for context 63593a9d-b927-4121-bfc8-c8fe7c6e2971
+Result: success
+Extracted Amount: $N/A
+Invoice Number: N/A
+
+Context History for first processing:
+Processing History: ['Classified by Classifier: JSON + INVOICE', 'Processed by JSON: extracted 6 fields']
+Agent Logs: 2 log entries
