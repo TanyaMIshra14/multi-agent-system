@@ -1,0 +1,46 @@
+ json_invoice = {
+        "invoice_number": "INV-2024-001",
+        "vendor": "ACME Corp",
+        "amount": 1250.00,
+        "date": "2024-03-15",
+        "description": "Office supplies"
+    }
+
+
+    email_rfq = """From: john.doe@company.com
+To: sales@supplier.com
+Subject: RFQ - Office Furniture - URGENT
+Date: Mon, 15 Mar 2024 10:30:00 +0000
+
+Dear Sales Team,
+
+We need to request a quote for office furniture. The requirements are:
+- Quantity: 50 desk chairs
+- Quantity: 25 standing desks
+- Deadline: End of this month
+- Budget: Up to $25,000
+
+This is urgent as we need to furnish our new office space.
+
+Best regards,
+John Doe"""
+
+
+ pdf_text = """INVOICE
+
+ACME Corporation
+123 Business St, City, State 12345
+
+Invoice #: INV-2024-0025
+Date: March 15, 2024
+
+Bill To:
+Customer Company
+456 Customer Ave
+
+Description: Consulting Services
+Amount: $2,500.00
+Tax: $200.00
+Total: $2,700.00
+
+Payment due within 30 days."""
